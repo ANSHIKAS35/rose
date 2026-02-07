@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day Bubu ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  max-width: 400px;
+  z-index: 2;
+}
+
+h1 {
+  color: #e63946;
+}
+
+img {
+  width: 100px;
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #e63946;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#noBtn {
+  position: absolute;
+}
+
+button:hover {
+  background: #c92c3a;
+}
+
+/* Falling roses */
+.rose {
+  position: fixed;
+  top: -50px;
+  font-size: 24px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+    <h1>Happy Rose Day Bubu 🌹</h1>
+
+    <!-- Replace photo.jpeg with your picture -->
+    <img src="photo.jpeg" alt="Our Photo">
+
+    <p>
+      My dearest Aman (bubu),<br><br>
+      Just like this rose, my love for you grows more beautiful whenever I see you💕
+      Thank you for coming in my life 🌹
+      haan thodi ldayi hui hai pr feelings av v fresh hai ,just like 🌹
+      
+
+    </p>
+
+    <p><strong>Will you be my Valentine for the 4th time ? ❤️</strong></p>
+
+    <button onclick="yesClicked()">YES 💖</button>
+    <button id="noBtn" onmouseover="moveNo()">NO 😜</button>
+
+    <p id="loveText" style="font-size:20px;color:#e63946;"></p>
+
+    <p>
+      Forever yours,<br>
+      DUDU ❤️
+    </p>
+  </div>
+</div>
+
+<script>
+function yesClicked() {
+  document.getElementById("loveText").innerHTML = "I KNEW IT  I LOVE YOU BUBU ❤️🌹";
+}
+
+function moveNo() {
+  let x = Math.random() * (window.innerWidth - 100);
+  let y = Math.random() * (window.innerHeight - 50);
+  let noBtn = document.getElementById("noBtn");
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+
+// Falling roses
+for (let i = 0; i < 25; i++) {
+  let rose = document.createElement("div");
+  rose.className = "rose";
+  rose.innerHTML = "🌹";
+  rose.style.left = Math.random() * 100 + "vw";
+  rose.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  rose.style.fontSize = (Math.random() * 20 + 20) + "px";
+  document.body.appendChild(rose);
+}
+</script>
+
+</body>
+</html>
